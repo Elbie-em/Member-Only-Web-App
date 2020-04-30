@@ -1,31 +1,33 @@
-<h1>Posts</h1>
+<div class="container">
+  <h1 class="primary-font-color post-heading mt-5">Posts</h1>
 
-<table>
-  <thead>
-    <tr>
-      <% if member_signed_in? %>
-        <th>Member</th>
-      <% end %>
-      <th>Body</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-
-  <tbody>
-    <% @posts.each do |post| %>
+  <table>
+    <thead>
       <tr>
         <% if member_signed_in? %>
-          <td>@<%= post.member.username %></td>
+          <th>Member</th>
         <% end %>
-        <td><%= post.body %></td>
+        <th class="primary-font-color">Body</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
 
-<% if member_signed_in? %>
-  <%= link_to 'Create New Post Here', new_post_path %>
-<% end %>
+    <tbody>
+      <% @posts.each do |post| %>
+        <tr>
+          <% if member_signed_in? %>
+            <td>@<%= post.member.username %></td>
+          <% end %>
+          <td><%= post.body %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+
+  <% if member_signed_in? %>
+    <%= link_to 'Create New Post Here', new_post_path %>
+  <% end %>
+</div>
