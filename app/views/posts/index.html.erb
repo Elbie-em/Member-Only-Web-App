@@ -28,6 +28,6 @@
   <br>
 
   <% if member_signed_in? %>
-    <%= link_to 'Create New Post Here', new_post_path %>
+    <%= link_to 'Create New Post Here', new_post_path, class: "btn", id: "new-post-btn" %>
   <% end %>
 </div>
