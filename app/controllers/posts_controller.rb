@@ -16,13 +16,13 @@ class PostsController < ApplicationController
 
   # GET /posts/new
   def new
-    @post = Post.new
+    @post = current_member.posts.build
   end
 
   # POST /posts
   # POST /posts.json
   def create
-    @post = Post.new(post_params)
+    @post = current_member.posts.build(post_params)
 
     respond_to do |format|
       if @post.save
