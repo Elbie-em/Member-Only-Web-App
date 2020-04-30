@@ -20,7 +20,7 @@
     <% @posts.each do |post| %>
       <tr>
         <td><%= post.body %></td>
-        <td><%= post.member %></td>
+        <td><%= post.member.username %></td>
       </tr>
     <% end %>
   </tbody>
