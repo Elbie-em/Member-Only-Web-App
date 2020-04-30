@@ -21,7 +21,7 @@
           <%= link_to 'Sign Up', new_member_registration_path , class: "primary-font-color" %>
         <% end %>
         <% if member_signed_in? %>
-          <span class="primary-font-color"><%= current_member.username %>is signed in!</span>
+          <span class="primary-font-color"><%= current_member.username %> is signed in!</span>
           <%= link_to 'Log Out', destroy_member_session_path, method: :delete, class: "secondary-font-color" %> 
       <% end %>
       </div>

@@ -11,8 +11,7 @@ class PostsController < ApplicationController
 
   # GET /posts/1
   # GET /posts/1.json
-  def show
-  end
+  def show; end
 
   # GET /posts/new
   def new
@@ -33,18 +32,17 @@ class PostsController < ApplicationController
         format.json { render json: @post.errors, status: :unprocessable_entity }
       end
     end
-
-
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_post
-      @post = Post.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def post_params
-      params.require(:post).permit(:body, :member_id)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_post
+    @post = Post.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def post_params
+    params.require(:post).permit(:body, :member_id)
+  end
 end
