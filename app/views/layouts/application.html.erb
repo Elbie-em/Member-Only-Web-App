@@ -10,8 +10,22 @@
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p> 
+    <% if flash[:notice] %>
+      <p class= "notice"><%= notice %></p>
+    <% end %>
+
+    <%if flash[:alert]%>
+      <p class= "alert"><%= alert%></p>
+    <% end %>
+
+    <% if !member_signed_in? %>
+      <%= link_to 'Log In', new_member_session_path %>
+      <%= link_to 'Sign Up', new_member_registration_path %>
+    <% end %>
+
+    <% if member_signed_in? %>
+      <%= link_to 'Log Out', destroy_member_session_path, method: :delete %> 
+    <% end %>
     <%= yield %>
   </body>
 </html>
