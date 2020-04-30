@@ -8,7 +8,7 @@
       <% @posts.each do |post| %>
         <tr>
           <% if member_signed_in? %>
-            <td>@<%= post.member.username %>:</td>
+            <td>@<%= post.member.username %></td>
           <% end %>
           <td><%= post.body %></td>
         </tr>
