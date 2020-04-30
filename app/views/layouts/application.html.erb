@@ -24,6 +24,7 @@
     <% end %>
 
     <% if member_signed_in? %>
+      <%= current_member.username %> is signed in! <br>
       <%= link_to 'Log Out', destroy_member_session_path, method: :delete %> 
     <% end %>
     <%= yield %>
