@@ -1,0 +1,24 @@
+<div class="container">
+  <h1 class="primary-font-color post-heading mt-5">Posts</h1>
+
+  <table>
+
+
+    <tbody>
+      <% @posts.each do |post| %>
+        <tr>
+          <% if member_signed_in? %>
+            <td>@<%= post.member.username %></td>
+          <% end %>
+          <td><%= post.body %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+
+  <% if member_signed_in? %>
+    <%= link_to 'Create New Post Here', new_post_path, class: "btn", id: "new-post-btn" %>
+  <% end %>
+</div>

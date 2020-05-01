@@ -1,0 +1,40 @@
+// Place all the styles related to the Posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.primary-font-color {
+  color: #d4af37;
+}    
+
+.secondary-font-color {
+  color: white;
+}
+
+
+nav .primary-font-color:hover, nav .secondary-font-color:hover {
+  text-decoration: none;
+  background-color: #343940;
+  color: #b08f26;
+}  
+
+.post-heading {
+  text-align: center;
+}  
+
+.form-div {
+  width: 500px;
+  border: 1px solid #d4af37;
+  border-radius: 2%;
+  padding: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}  
+
+.primary-font-color:visited {
+  color: #b08f26;
+}  
+
+#signup-button, #login-button, #new-post-btn, #post-btn {
+  background: #d4af37;
+  color: white;
+}
+
